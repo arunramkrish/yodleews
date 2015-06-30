@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://portfolio.webservices.yodlee.com/" xmlns:tns="http://portfolio.webservices.yodlee.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="equity" type="tns:equity"/>
+
+  <xs:element name="getPortfolio" type="tns:getPortfolio"/>
+
+  <xs:element name="getPortfolioResponse" type="tns:getPortfolioResponse"/>
+
+  <xs:element name="getPortfolioValue" type="tns:getPortfolioValue"/>
+
+  <xs:element name="getPortfolioValueResponse" type="tns:getPortfolioValueResponse"/>
+
+  <xs:complexType name="getPortfolioValue">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPortfolioValueResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:double" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPortfolio">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getPortfolioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:equity" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="equity">
+    <xs:sequence>
+      <xs:element name="avgBuyPrice" type="xs:double" minOccurs="0"/>
+      <xs:element name="marketPrice" type="xs:double" minOccurs="0"/>
+      <xs:element name="quantity" type="xs:long" minOccurs="0"/>
+      <xs:element name="symbol" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
